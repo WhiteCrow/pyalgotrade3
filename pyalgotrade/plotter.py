@@ -23,9 +23,11 @@ import collections
 from . import broker
 from pyalgotrade import warninghelpers
 
+import matplotlib
+matplotlib.use('Agg')
+
 import matplotlib.pyplot as plt
 from matplotlib import ticker
-
 
 def get_last_value(dataSeries):
     ret = None

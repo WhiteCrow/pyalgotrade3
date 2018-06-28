@@ -129,6 +129,7 @@ class BasicBar(Bar):
     )
 
     def __init__(self, dateTime, open_, high, low, close, volume, adjClose, frequency, extra={}):
+        '''
         if high < low:
             raise Exception("high < low on %s" % (dateTime))
         elif high < open_:
@@ -139,6 +140,7 @@ class BasicBar(Bar):
             raise Exception("low > open on %s" % (dateTime))
         elif low > close:
             raise Exception("low > close on %s" % (dateTime))
+        '''
 
         self.__dateTime = dateTime
         self.__open = open_
