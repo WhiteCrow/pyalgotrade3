@@ -387,6 +387,10 @@ class LimitOrder(Order):
         """Returns the limit price."""
         return self.__limitPrice
 
+    def setLimitPrice(self, price):
+        """update the limit price."""
+        self.__limitPrice = price
+
 
 class StopOrder(Order):
     """Base class for stop orders.
