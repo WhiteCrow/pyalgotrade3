@@ -61,7 +61,7 @@ class Worker(object):
 
     def getInstrumentsAndBars(self):
         ret = call_and_retry_on_network_error(self.__server.getInstrumentsAndBars, 10)
-        ret = pickle.loads(ret)
+        ret = pickle.loads(ret.data)
         return ret
 
     def getBarsFrequency(self):
@@ -71,7 +71,7 @@ class Worker(object):
 
     def getNextJob(self):
         ret = call_and_retry_on_network_error(self.__server.getNextJob, 10)
-        ret = pickle.loads(ret)
+        ret = pickle.loads(ret.data)
         return ret
 
     def pushJobResults(self, jobId, result, parameters):
