@@ -95,7 +95,7 @@ class Worker(object):
                 result = self.runStrategy(feed, *parameters)
             except Exception as e:
                 self.getLogger().exception("Error running strategy with parameters %s: %s" % (str(parameters), e))
-            self.getLogger().info("Result %s" % result)
+            self.getLogger().info("Result {}".format(result))
             if bestResult is None or result > bestResult:
                 bestResult = result
                 bestParams = parameters
