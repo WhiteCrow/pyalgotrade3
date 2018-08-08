@@ -122,9 +122,9 @@ class Server(xmlrpc.server.SimpleXMLRPCServer):
         return jobsPending or activeJobs
 
     def pushJobResults(self, jobId, result, parameters, workerName):
-        jobId = pickle.loads(jobId)
-        result = pickle.loads(result)
-        parameters = pickle.loads(parameters)
+        jobId = pickle.loads(jobId.data)
+        result = pickle.loads(result.data)
+        parameters = pickle.loads(parameters.data)
 
         # Remove the job mapping.
         with self.__activeJobsLock:
